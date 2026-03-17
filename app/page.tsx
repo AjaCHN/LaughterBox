@@ -1,9 +1,9 @@
-// app/page.tsx v5.6.0
+// app/page.tsx v5.7.0
 "use client"
 
 import { useState, useCallback, useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
-import { Sparkles, Shuffle } from "lucide-react"
+import { Sparkles, Shuffle, Quote } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { JOKES_DATA } from "@/lib/jokes-data"
 
@@ -100,15 +100,35 @@ export default function Page() {
                   })
                 }}
                 transition={{ duration: 0.25 }}
-                className="flex min-h-[350px] flex-col justify-center rounded-2xl bg-white p-8 shadow-sm dark:bg-neutral-900 sm:p-12 md:min-h-[450px] md:p-16 lg:p-20 touch-pan-y cursor-grab active:cursor-grabbing"
+                className="relative flex min-h-[350px] flex-col items-center justify-center rounded-3xl bg-white p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:bg-neutral-900 dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] sm:p-12 md:min-h-[450px] md:p-16 lg:p-20 touch-pan-y cursor-grab active:cursor-grabbing"
               >
-                <p id="joke-text" className="text-center font-serif text-3xl leading-relaxed text-neutral-800 dark:text-neutral-200 sm:text-4xl md:text-5xl lg:text-6xl select-none">
-                  {jokes.length > 0 ? jokes[currentIndex] : "暂无笑话"}
-                </p>
+                <div className="absolute top-8 left-8 opacity-10 dark:opacity-20">
+                  <Quote className="h-12 w-12 rotate-180 fill-current" />
+                </div>
+                
+                <div className="relative z-10 flex flex-col items-center gap-8">
+                  <p id="joke-text" className="max-w-[90%] text-center font-serif text-3xl font-light leading-snug tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-4xl md:text-5xl lg:text-6xl select-none">
+                    {jokes.length > 0 ? jokes[currentIndex] : "暂无笑话"}
+                  </p>
+                  
+                  {jokes.length > 0 && (
+                    <div className="flex items-center gap-4 opacity-30">
+                      <div className="h-px w-8 bg-current" />
+                      <span className="font-mono text-xs tracking-widest uppercase">
+                        {String(currentIndex + 1).padStart(3, '0')} / {String(jokes.length).padStart(3, '0')}
+                      </span>
+                      <div className="h-px w-8 bg-current" />
+                    </div>
+                  )}
+                </div>
+
+                <div className="absolute bottom-8 right-8 opacity-10 dark:opacity-20">
+                  <Quote className="h-12 w-12 fill-current" />
+                </div>
               </motion.div>
             )}
             {!mounted && (
-              <div className="flex min-h-[350px] flex-col justify-center rounded-2xl bg-white p-8 shadow-sm dark:bg-neutral-900 sm:p-12 md:min-h-[450px] md:p-16 lg:p-20">
+              <div className="flex min-h-[350px] flex-col justify-center rounded-3xl bg-white p-8 shadow-sm dark:bg-neutral-900 sm:p-12 md:min-h-[450px] md:p-16 lg:p-20">
                 <div className="h-12 w-3/4 animate-pulse self-center rounded-lg bg-neutral-100 dark:bg-neutral-800" />
               </div>
             )}

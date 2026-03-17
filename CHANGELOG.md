@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [5.7.0]
+### Added
+- Optimized joke text typography with decorative quotes and index indicators.
+- Refined UI layout by removing borders and using soft shadows.
+- Improved visual hierarchy for a more "elegant" editorial feel.
+
 ## [5.6.0]
 ### Added
 - Added swipe gestures for mobile devices to navigate to the previous/next joke.
