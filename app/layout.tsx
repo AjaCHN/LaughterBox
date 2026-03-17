@@ -1,4 +1,4 @@
-// app/layout.tsx v5.5.0
+// app/layout.tsx v5.6.0
 import type {Metadata, Viewport} from 'next';
 import { Noto_Serif_SC } from 'next/font/google';
 import './globals.css'; // Global styles
@@ -18,7 +18,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'LaughterBox v5.5.0',
+  title: 'LaughterBox v5.6.0',
   description: '最全面的短篇笑话集合，每篇控制在 100 字以内。',
   keywords: '笑话, 幽默, 极简, 段子',
   authors: [{ name: 'Sut' }],

@@ -8,7 +8,7 @@ A minimalist joke collection application designed for a clean reading experience
 - **Minimalist Design**: Focused on content with a clean UI.
 - **Responsive**: Fully optimized for Mobile, Tablet, and Desktop.
 - **Dark Mode**: Seamless transition between light and dark themes.
-- **Navigation**: Simple random navigation for easy browsing.
+- **Navigation**: Supports random navigation and swipe gestures (previous/next).
 - **PWA Support**: Installable as a Progressive Web App.
 - **High Robustness**: Comprehensive empty data handling and hydration error prevention.
 

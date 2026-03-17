@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## [5.6.0]
+### Added
+- Added swipe gestures for mobile devices to navigate to the previous/next joke.
+- Added horizontal slide animations for swipe navigation.
+
 ## [5.5.0]
 ### Added
 - Created `openspec/spec.md` to document code functionality details.
