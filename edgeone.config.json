@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "framework": "nextjs",
+  "build": {
+    "command": "npm run build",
+    "outputDirectory": ".next"
+  },
+  "routes": [
+    {
+      "src": "/_next/static/(.*)",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block"
+      }
+    }
+  ],
+  "platform": {
+    "framework": {
+      "name": "nextjs",
+      "version": "15"
+    },
+    "nodeVersion": "18.x"
+  }
+}
